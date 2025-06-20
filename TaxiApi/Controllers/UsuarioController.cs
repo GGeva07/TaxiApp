@@ -35,7 +35,7 @@ namespace TaxiApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] usuario entity)
         {
-            if (id != entity.Id) return BadRequest();
+            if (id != entity.id) return BadRequest();
             await _service.UpdateAsync(entity);
             return NoContent();
         }
