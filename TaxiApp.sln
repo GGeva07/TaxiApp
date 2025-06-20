@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A77502EE-2E47-48CA-8767-3261C3F0416F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure", "Infraestructure\Infraestructure.csproj", "{9AC0B681-1E32-45D0-B9A9-AF060E47C725}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Infraestructure\Persistence.csproj", "{9AC0B681-1E32-45D0-B9A9-AF060E47C725}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
