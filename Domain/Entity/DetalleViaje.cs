@@ -1,19 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class DetalleViaje
+    [Table("detalleViaje")]
+    public class detalleViaje
     {
-        public int Id { get; set; }
-        public double Longitud { get; set; }
-        public double Latitud { get; set; }
-        public DateTime Fecha { get; set; }
+        [Key]
+        public int id { get; set; }
 
-        public int IdViaje { get; set; }
-        public Viaje Viaje { get; set; }
+        [Column("longitude")]
+        public string longitude { get; set; }
+
+        [Column("latitud")]
+        public string latitud { get; set; }
+
+        [Column("fecha")]
+        public DateTime fecha { get; set; }
+
+        [Column("idViaje")]
+        public int idViaje { get; set; }
+
+        [ForeignKey("idViaje")]
+        public viaje viaje { get; set; }
     }
 }

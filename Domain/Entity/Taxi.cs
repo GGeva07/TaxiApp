@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class Taxi
+    [Table("taxi")]
+    public class taxi
     {
-        public int Id { get; set; }
-        public string Placa { get; set; }
+        [Key]
+        public int id { get; set; }
 
-        public int IdViaje { get; set; }
-        public Viaje Viaje { get; set; }
+        [Column("placa")]
+        public string placa { get; set; }
+
+        [Column("idViaje")]
+        public int idViaje { get; set; }
+
+        [ForeignKey("idViaje")]
+        public viaje viaje { get; set; }
     }
 }

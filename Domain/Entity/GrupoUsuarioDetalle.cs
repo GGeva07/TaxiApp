@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class GrupoUsuarioDetalle
+    [Table("GrupoUsuarioDetalle")]
+    public class grupoUsuarioDetalle
     {
-        public int Id { get; set; }
+        [Key]
+        public int id { get; set; }
 
-        public int IdGrupoUsuario { get; set; }
-        public GrupoUsuario GrupoUsuario { get; set; }
+        [Column("idGrupoUsuario")]
+        public int idGrupoUsuario { get; set; }
+
+        [ForeignKey("idGrupoUsuario")]
+        public grupoUsuario grupoUsuario { get; set; }
     }
 }

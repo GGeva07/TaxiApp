@@ -1,24 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class Viaje
+    [Table("viaje")]
+    public class viaje
     {
-        public int Id { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
-        public string Desde { get; set; }
-        public string Hasta { get; set; }
-        public int Calificacion { get; set; }
+        [Key]
+        public int id { get; set; }
 
-        public int IdUsuario { get; set; }
-        public Usuario Usuario { get; set; }
+        [Column("fechaInicio")]
+        public DateTime fechaInicio { get; set; }
 
-        public Taxi Taxi { get; set; }
-        public ICollection<DetalleViaje> Detalles { get; set; }
+        [Column("fechaFin")]
+        public DateTime fechaFin { get; set; }
+
+        [Column("desde")]
+        public string desde { get; set; }
+
+        [Column("hasta")]
+        public string hasta { get; set; }
+
+        [Column("calificacion")]
+        public int calificacion { get; set; }
+
+        [Column("idUsuario")]
+        public int idUsuario { get; set; }
+
+        [ForeignKey("idUsuario")]
+        public usuario usuario { get; set; }
+
+        public taxi taxi { get; set; }
+
+        public ICollection<detalleViaje> detalles { get; set; }
     }
 }
